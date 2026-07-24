@@ -1,0 +1,149 @@
+
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ─── Light theme (default) — cool white + deep navy ─── */
+:root {
+  --font-size: 16px;
+  --background: #F2F6FF;
+  --foreground: #0D1E38;
+  --card: #FFFFFF;
+  --card-foreground: #0D1E38;
+  --popover: #FFFFFF;
+  --popover-foreground: #0D1E38;
+  --primary: #B8922A;
+  --primary-foreground: #FFFFFF;
+  --secondary: #E4EDF9;
+  --secondary-foreground: #0D1E38;
+  --muted: #E4EDF9;
+  --muted-foreground: #5A6E8A;
+  --accent: #D4E1F4;
+  --accent-foreground: #0D1E38;
+  --destructive: #DC2626;
+  --destructive-foreground: #ffffff;
+  --border: #C2D3EC;
+  --input: #E4EDF9;
+  --input-background: #E4EDF9;
+  --switch-background: #B5C8E2;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #B8922A;
+  --chart-1: #B8922A;
+  --chart-2: #16A34A;
+  --chart-3: #1E60C8;
+  --chart-4: #7C3AED;
+  --chart-5: #EA580C;
+  --radius: 0.5rem;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #0D1E38;
+  --sidebar-primary: #B8922A;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #E4EDF9;
+  --sidebar-accent-foreground: #0D1E38;
+  --sidebar-border: #C2D3EC;
+  --sidebar-ring: #B8922A;
+  --gold: #B8922A;
+  --green: #16A34A;
+  --red: #DC2626;
+}
+
+.dark {
+  --background: #070C17;
+  --foreground: #E3EBF8;
+  --card: #0B1322;
+  --card-foreground: #E3EBF8;
+  --popover: #0B1322;
+  --popover-foreground: #E3EBF8;
+  --primary: #C9A84C;
+  --primary-foreground: #070C17;
+  --secondary: #111D30;
+  --secondary-foreground: #E3EBF8;
+  --muted: #111D30;
+  --muted-foreground: #6A82A8;
+  --accent: #172338;
+  --accent-foreground: #E3EBF8;
+  --destructive: #EF4444;
+  --destructive-foreground: #ffffff;
+  --border: #1D2F4A;
+  --input: #111D30;
+  --input-background: #111D30;
+  --switch-background: #233552;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #C9A84C;
+  --chart-1: #C9A84C;
+  --chart-2: #22C55E;
+  --chart-3: #3B82F6;
+  --chart-4: #A78BFA;
+  --chart-5: #F97316;
+  --radius: 0.5rem;
+  --sidebar: #0B1322;
+  --sidebar-foreground: #E3EBF8;
+  --sidebar-primary: #C9A84C;
+  --sidebar-primary-foreground: #070C17;
+  --sidebar-accent: #172338;
+  --sidebar-accent-foreground: #E3EBF8;
+  --sidebar-border: #1D2F4A;
+  --sidebar-ring: #C9A84C;
+  --gold: #C9A84C;
+  --green: #22C55E;
+  --red: #EF4444;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* Market ticker scroll */
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-ticker-scroll { animation: ticker-scroll 60s linear infinite; }
